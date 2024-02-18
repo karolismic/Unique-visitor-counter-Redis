@@ -6,7 +6,7 @@ const port = process.env.PORT || 3000; // Use the PORT environment variable if a
 // Connect to Redis
 const redisClient = redis.createClient({
   host: 'redis-cache-786.redis.cache.windows.net', // Replace with your Azure Redis Cache hostname
-  port: 6380, // Azure Redis Cache TLS port, use 6379 for non-TLS
+  port: 6379, // Azure Redis Cache TLS port, use 6379 for non-TLS
   password: 'cXz5pqDRbb6GMGA1o5nYsqaJZqNF5LmSEAzCaEIgbjM=', // Replace with your primary key
   tls: {} // Azure Redis Cache requires TLS
 });
