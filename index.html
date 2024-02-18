@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Counter</title>
+    <script>
+        // Function to call the backend to get the current visitor count
+        async function fetchVisitorCount() {
+            try {
+                const response = await fetch('/visitor-count', { method: 'GET' });
+                const data = await response.json();
+                document.getElementById('count').innerText = `Unique Visitors: ${data.count}`;
+            } catch (error) {
+                console.error('Error fetching visitor count:', error);
+            }
+        }
+
+        // Call the function on page load
+        window.onload = function() {
+            fetchVisitorCount();
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome to Our Site!</h1>
+    <p id="count">Unique Visitors: Loading...</p>
+</body>
+</html>
